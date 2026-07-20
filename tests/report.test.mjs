@@ -1,0 +1,2 @@
+import assert from "node:assert/strict"; import test from "node:test"; import {createReport} from "../lib/report.mjs";
+test("sorts settings and redacts secret-like values",()=>{const report=createReport({"z.path":"C:\\tools","apiKey":"do-not-print","a.enabled":true},{"a.enabled":{workspaceValue:true,globalValue:false}}); assert.ok(report.indexOf("a.enabled")<report.indexOf("z.path")); assert.doesNotMatch(report,/do-not-print/); assert.match(report,/\[redacted\]/); assert.match(report,/absolute path/);});

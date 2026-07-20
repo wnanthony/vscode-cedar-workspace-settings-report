@@ -1,0 +1,7 @@
+{
+  "name":"cedar-workspace-settings-report","displayName":"Cedar Workspace Settings Report","description":"Create a readable, portable audit of workspace settings","version":"1.0.0","publisher":"cedarmeridian","license":"MIT","engines":{"vscode":"^1.96.0"},"categories":["Other"],
+  "repository":{"type":"git","url":"https://github.com/wnanthony/vscode-cedar-workspace-settings-report.git"},
+  "activationEvents":[],"main":"extension.js","contributes":{"commands":[{"command":"cedarSettingsReport.create","title":"Cedar: Create Workspace Settings Report","category":"Cedar Meridian"}]},
+  "scripts":{"test":"node --test tests/*.test.mjs","lint":"node --check extension.js && node --check lib/report.mjs","package":"vsce package --out cedar-workspace-settings-report-1.0.0.vsix"},
+  "devDependencies":{"@vscode/vsce":"3.6.2"}
+}
